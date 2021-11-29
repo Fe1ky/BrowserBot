@@ -1,0 +1,17 @@
+
+body{
+    background-color: orange;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+.joystick{
+    width:200px;height:200px;
+}
+.centertext{
+    text-size-adjust: 250px;
+    display: flex;
+    justify-content: center;
+}

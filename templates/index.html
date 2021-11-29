@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<Head>
+    <title>Drive Me</title>
+
+    <script type=text/javascript src="{{url_for('static', filename='js/joy.js') }}"></script>
+    <script src="static/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <link href="static/css/joystick.css" rel="stylesheet"></link>
+
+</Head>
+
+<body>
+   <div style="padding-top: 20px;"> 
+       <div class="center">
+        <img src="/static/testImage.jpg">
+    </div>
+    <br>
+    <h1 class="center">
+Use the joystick to drive The Bot  
+    </h1>
+<div class="center">
+        <div id="joy1Div" class="joystick"></div>
+    </div>
+    <!-- <div style="  display: flex;
+        justify-content: center;">
+     
+            X :<input id="joy1X" type="button" />
+            Y :<input id="joy1Y" type="button" />
+    
+        </div> -->
+    </div>
+ 
+    <script type=text/javascript src="{{url_for('static', filename='js/com.js') }}"></script>
+
+
+</body>
+
+
+</html>
