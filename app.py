@@ -55,18 +55,18 @@ def xyData(data):
     # print(data)
     parsedData = json.loads(json.dumps(data))
     # print(parsedData["xVal"]+ ' ' +parsedData["yVal"])
-
+    drive.drive(parsedData["xVal"],parsedData["yVal"])
 
 # the code below prints the expected DAC output voltages to the console 
     
-    xTwelveBit = (round(float(parsedData["xVal"])/float(100)*4095)+2048)
-    yTwelveBit = (round(float(parsedData["yVal"])/float(100)*4095)+2048)
-    xVolt = str((5/4096)*xTwelveBit)
-    yVolt = str((5/4096)*yTwelveBit)
+    # xTwelveBit = (round(float(parsedData["xVal"])/float(100)*4095)+2048)
+    # yTwelveBit = (round(float(parsedData["yVal"])/float(100)*4095)+2048)
+    # xVolt = str((5/4096)*xTwelveBit)
+    # yVolt = str((5/4096)*yTwelveBit)
     # print("Volts X: " + xVolt + " Volts Y: " + yVolt) 
 
     
-    drive.drive(parsedData["xVal"],parsedData["yVal"])
+    
     
    
 
