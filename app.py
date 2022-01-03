@@ -69,14 +69,14 @@ def xyData(data):
     yTwelveBit = (round(float(parsedData["yVal"])/float(100)*4095)+2048)
     xVolt = str((5/4096)*xTwelveBit)
     yVolt = str((5/4096)*yTwelveBit)
-    print("Volts X: " + xVolt + "Volts Y: " + yVolt) 
+    print("Volts X: " + xVolt + " Volts Y: " + yVolt) 
 
 
 # The code below sends the normalized values to the DAC
     
     # normx = ((((float(parsedData["xVal"]))/2)/100)+.6)/1.2
     # dacx.normalized_value = normx
-    # normy = ((((float(parsedData["xVal"]))/2)/100)+.6)/1.2
+    # normy = ((((float(parsedData["yVal"]))/2)/100)+.6)/1.2
     # dacy.normalized_value = normy
     
     
