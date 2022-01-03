@@ -17,11 +17,28 @@ function openSocket() {
 }
 
 setInterval(function () {
-    joy1X.value = Joy1.GetX();
-    xVal = Joy1.GetX();
 
-    joy1Y.value = Joy1.GetY();
-    yVal = Joy1.GetY();
+    // console.log(getGamepadStatus())
+    
+    if(getGamepadName()== "Xbox Wireless Controller Extended Gamepad" & Joy1.GetX() == 0 & Joy1.GetY()==0){
+        var joyCon1 = getGamepadStatus()[0];
+        // console.log("X: "+joyCon1[0]+", Y: "+joyCon1[1])
+        
+        joy1X.value = Math.floor(joyCon1[0]*100);
+        xVal = Math.floor(joyCon1[0]*100);
+        
+        joy1Y.value = Math.floor(joyCon1[1]*100);
+        yVal = Math.floor(joyCon1[1]*100);
+        
+    } else {
+
+        joy1X.value = Joy1.GetX();
+        xVal = Joy1.GetX();
+     
+        joy1Y.value = Joy1.GetY();
+        yVal = Joy1.GetY();
+    }
+
 
     data = {
         'xVal': xVal,
@@ -30,10 +47,6 @@ setInterval(function () {
     socket.emit('xyData', data);
 }, 50);
 
-setInterval(function () {
-    joy1Y.value = Joy1.GetY();
-    yVal = Joy1.GetY();
-}, 50);
 
 
 
