@@ -1,13 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, Response
 from flask_socketio import SocketIO
 import json
-# from camera_pi import Camera
-# import board
-# import busio
-# import adafruit_mcp4725
-# i2c = busio.I2C(board.SCL, board.SDA)
-# dacx = adafruit_mcp4725.MCP4725(i2c, address=0x61)
-# dacy = adafruit_mcp4725.MCP4725(i2c, address=0x60)
+import drive
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 socketio = SocketIO(app)
@@ -69,16 +63,10 @@ def xyData(data):
     yTwelveBit = (round(float(parsedData["yVal"])/float(100)*4095)+2048)
     xVolt = str((5/4096)*xTwelveBit)
     yVolt = str((5/4096)*yTwelveBit)
-    print("Volts X: " + xVolt + " Volts Y: " + yVolt) 
+    # print("Volts X: " + xVolt + " Volts Y: " + yVolt) 
 
-
-# The code below sends the normalized values to the DAC
     
-    # normx = ((((float(parsedData["xVal"]))/2)/100)+.6)/1.2
-    # dacx.normalized_value = normx
-    # normy = ((((float(parsedData["yVal"]))/2)/100)+.6)/1.2
-    # dacy.normalized_value = normy
-    
+    drive.drive(parsedData["xVal"],parsedData["yVal"])
     
    
 

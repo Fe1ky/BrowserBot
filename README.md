@@ -12,6 +12,9 @@ The wheelchair its self is controlled by the raspberry pi by modulating the outp
 
 A webpage with (un-authenticated) login is hosted to the local network by a Flask server. the position of the Joystick is sent from the webpage to the Python server via a socket connection with the 'x' and 'y' positions encoded in a JASON packet 
 
+### Hardware Controlle
+connect a hardware game controller to you computer and open webpage with Chrome, press a few butttons on the controller to wake it up and use the hardware joystick to control the bot. this works thanks to the Gamepad API (currently only tested with a single XBox One controller)
+
 ### joystick 
 
 The joystick itself comes from bobboteck's project https://github.com/bobboteck/JoyStick
