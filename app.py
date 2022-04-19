@@ -55,7 +55,7 @@ def xyData(data):
     # print(data)
     parsedData = json.loads(json.dumps(data))
     # print(parsedData["xVal"]+ ' ' +parsedData["yVal"])
-    drive.drive(parsedData["xVal"],parsedData["yVal"])
+    drive.drive(parsedData["xVal"],(parsedData["yVal"]))
 
 # the code below prints the expected DAC output voltages to the console 
     
