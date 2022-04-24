@@ -33,4 +33,4 @@ def drive(x,y):
     # print (ser.readline())
 
 
-    # print(x ,y)
+    print(x ,y)

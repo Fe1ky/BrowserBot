@@ -15,3 +15,10 @@ body{
     display: flex;
     justify-content: center;
 }
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; 
+    -webkit-appearance: slider-vertical; /* WebKit */
+
+}
