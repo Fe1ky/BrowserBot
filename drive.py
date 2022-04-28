@@ -8,7 +8,7 @@
 from time import sleep
 import serial
 import struct
-ser = serial.Serial(port='/dev/cu.usbserial-1410', baudrate=115200, timeout=.1) 
+# ser = serial.Serial(port='/dev/cu.usbserial-1410', baudrate=115200, timeout=.1) 
 
 # i2c = busio.I2C(board.SCL, board.SDA)
 # dacx = adafruit_mcp4725.MCP4725(i2c, address=0x61)
@@ -29,7 +29,7 @@ def drive(x,y):
     y=abs(-int(y)+100)
     x=abs(int(x)+100)
   
-    ser.write(struct.pack('>BB',x,y))
+    # ser.write(struct.pack('>BB',x,y))
     # print (ser.readline())
 
 
